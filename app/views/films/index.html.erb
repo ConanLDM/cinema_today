@@ -2,6 +2,9 @@
 
 <h1>Films</h1>
 
+<%# <%= cl_image_tag %>
+      <%# width: 500, height: 500, crop: :fill) %>
+
 <div id="films">
   <% @films.each do |film| %>
     <%= render film %>

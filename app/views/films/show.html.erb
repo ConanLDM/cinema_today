@@ -2,6 +2,10 @@
 
 <%= render @film %>
 
+<% if @film.photo.present? %>
+  <%= cl_image_tag @film.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <div>
   <%= link_to "Edit this film", edit_film_path(@film) %> |
   <%= link_to "Back to films", films_path %>
