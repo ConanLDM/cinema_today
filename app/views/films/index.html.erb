@@ -1,17 +1,39 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Films</h1>
+
+
+<header role="banner" aria-label="Cinema Today" style="margin-left: 250px;">
+  <h1>Cinema Today</h1>
+</header>
+
+ <div style="text-align: center;">
+  <p><span data-controller="typed-js"></span></p>
+</div>
+
+<div style="text-align: center; font-size: 36px;">
+  <h2><font size="+2">Films</font></h2><i class="fa-solid fa-film"></i>
+</div>
+
+<%= link_to new_film_path do %>
+  <div style="text-align:center;">
+    <button class="buttons" type="button">New film</button>
+  </div>
+<% end %>
 
 <%# <%= cl_image_tag %>
       <%# width: 500, height: 500, crop: :fill) %>
-
-<div id="films">
-  <% @films.each do |film| %>
-    <%= render film %>
-    <p>
-      <%= link_to "Show this film", film %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New film", new_film_path %>
+  <div class="container">
+    <div class="row justify-content-center buttons">
+      <div class="col-12 col-lg-6">
+        <div id="films">
+          <% @films.each do |film| %>
+            <%= render film %>
+            <p>
+              <%= link_to film_path(film) do %>
+                <button class="buttons" type="button">Show this film</button>
+              <% end %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+  </div>
