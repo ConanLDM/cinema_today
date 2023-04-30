@@ -7,10 +7,12 @@
     "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
+    "typed.js": "^2.0.16",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

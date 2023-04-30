@@ -1,1 +1,12 @@
 @import "bootstrap/scss/bootstrap";
+@import "components/index";
+@import "bootstrap";
+
+body {
+  // background-image: url('movie-theater.jpg');
+  // background-image: url('unsplash-background.png');
+  background: content-box radial-gradient(rgb(253, 124, 150), skyblue);
+  background-size: cover;
+  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.2);
+}
