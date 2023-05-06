@@ -10,5 +10,11 @@
   <a href="..." class="btn btn-primary"<%= link_to "Edit this film", edit_film_path(@film) %> |</a>
   <%= link_to "Back to films", films_path %>
 
-  <%= button_to "Destroy this film", @film, method: :delete %>
+  <%= button_to "Destroy this film", @film, method: :delete, form: {
+    data: {
+      turbo_confirm: "Are you sure?",
+      turbo_confirm_text: @film.title,
+      turbo_confirm_description: "This action cannot be undone. Enter the post title to confirm."
+    }
+  } %>
 </div>
