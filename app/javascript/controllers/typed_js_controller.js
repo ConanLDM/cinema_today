@@ -3,8 +3,9 @@ import Typed from "typed.js"
 
 export default class extends Controller {
   connect() {
+
     new Typed(this.element, {
-      strings: ["Highlights of Cinema", "Presented to you"],
+      strings: ["Highlights of Cinema", "Presented by you", "Presented...", "...to you"],
       startDelay: 500,
       typeSpeed: 50,
       backDelay: 250,
