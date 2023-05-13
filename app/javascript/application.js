@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 
 
+
 Turbo.setConfirmMethod((message, element, button) => {
   console.log(message, element);
 
@@ -88,4 +89,3 @@ Turbo.setConfirmMethod((message, element, button) => {
     });
   });
 });
-
