@@ -1,14 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<div class="text-center">
+  <p style="notice-green"><%= notice %></p>
+  <main class="flex-shrink-0">
+    <div class="container">
+      <%= render @film %>
+      <% if @film.photo.present? %>
+        <%= cl_image_tag @film.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div>
+        <%= link_to "Edit this film", edit_film_path(@film), class: "btn btn-primary" %>  |
+        <%= link_to "Back to films", films_path, class: "btn btn-secondary" %>
 
-<%= render @film %>
+        <%= button_to "Delete this film", @film, method: :delete, form: {
+          data: {
+            turbo_confirm: "Are you sure?",
+            turbo_confirm_text: @film.title,
+            turbo_confirm_description: "This action cannot be undone. Enter the film title to confirm."
+          }
+        } %>
+      </div>
+    </div>
+  </main>
 
-<% if @film.photo.present? %>
-  <%= cl_image_tag @film.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<div>
-  <a href="..." class="btn btn-primary"<%= link_to "Edit this film", edit_film_path(@film) %> |</a>
-  <%= link_to "Back to films", films_path %>
-
-  <%= button_to "Destroy this film", @film, method: :delete %>
+   <dialog id="turbo-confirm">
+     <div class="dialog-content">
+      <h2 class="dialog-title"></h2>
+      <p class="dialog-description"></p>
+      <input type="text" class="confirm-text" placeholder="Enter film title">
+      <div class="dialog-buttons">
+        <button class="confirm-button" value="confirm">Confirm</button>
+        <button class="cancel-button" value="cancel">Cancel</button>
+      </div>
+    </div>
+  </dialog>
 </div>
