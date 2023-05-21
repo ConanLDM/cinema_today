@@ -6,6 +6,6 @@ ActiveStorage and Cloudinary implemented
 
 RSpec and motor_admin gems and files setup for testing and admin purposes later
 
-Will add user authentication through Devise soon
+Devise integrated, functionality being worked on
 
-App is deployed on Fly.io currently running on Rails 7.0.4.3 and Ruby 3.1.2
+App has been deployed on Fly.io currently running on Rails 7.0.4.3 and Ruby 3.1.2
