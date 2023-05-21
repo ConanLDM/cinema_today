@@ -1,6 +1,12 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: %i[ show edit update destroy ]
 
+  # Code for Devise
+  skip_before_action :authenticate_user!, only: :home
+
+  def home
+  end
+
   # GET /films or /films.json
   def index
     @films = Film.all
