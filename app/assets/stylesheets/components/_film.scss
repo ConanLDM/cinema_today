@@ -1,0 +1,37 @@
+.film-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.film-icon {
+  text-align: center;
+  font-size: 48px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.film-form {
+  margin-top: 20px;
+}
+
+.film-back-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.film-back-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #040292;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.film-back-link a:hover {
+  background-color: #2197e5;
+}

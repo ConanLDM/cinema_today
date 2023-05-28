@@ -1,6 +1,9 @@
 /* Navbar container */
 .container {
-  padding: 10px;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Sets navbar as the same length as the header encapsulating banner */
+  box-sizing: border-box;
 }
 
 /* Navbar brand link */

@@ -1,0 +1,21 @@
+.create-button {
+  background-color: #ff0000; /* Choose your desired background color */
+  color: #ffffff; /* Choose your desired text color */
+  font-size: 18px; /* Adjust font size as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  animation: create-animation 1s infinite;
+}
+
+@keyframes create-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

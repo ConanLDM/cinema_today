@@ -1,11 +1,15 @@
-<h1>New film</h1>
+<div class="film-title">
+  <h1>New film</h1>
+</div>
 
-<i class="fa-solid fa-film"></i>
+<div class="film-icon">
+  <i class="fa-solid fa-film"></i>
+</div>
 
-<%= render "form", film: @film %>
+<div class="film-form">
+  <%= render "form", film: @film %>
+</div>
 
-<br>
-
-<div>
+<div class="film-back-link">
   <%= link_to "Back to films", films_path %>
 </div>
