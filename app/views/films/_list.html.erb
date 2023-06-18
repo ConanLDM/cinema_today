@@ -1,0 +1,14 @@
+<div data-search-films-target="list">
+  <p class="h3">
+    <% if params[:query].blank? %>
+      <%= pluralize films.count, "film" %> available
+    <% else %>
+      <%= pluralize films.count, "result" %> for <code><%= params[:query] %></code>
+    <% end %>
+  </p>
+  <div class="films">
+    <% films.each do |film| %>
+      <%= render "film_infos", film: film %>
+    <% end %>
+  </div>
+</div>

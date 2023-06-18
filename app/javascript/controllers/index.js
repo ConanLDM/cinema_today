@@ -7,8 +7,14 @@ import { application } from "./application"
 import CopyrightController from "./copyright_controller"
 application.register("copyright", CopyrightController)
 
+import EditFilmController from "./edit_film_controller"
+application.register("edit-film", EditFilmController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import SearchFilmsController from "./search_films_controller"
+application.register("search-films", SearchFilmsController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)

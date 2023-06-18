@@ -9,7 +9,16 @@ class FilmsController < ApplicationController
 
   # GET /films or /films.json
   def index
-    @films = Film.all
+    @films = Film.order(title: :asc)
+
+    if params[:query].present?
+      @films= @films.where("title ILIKE ?", "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "films/list", locals: {films: @films}, formats: [:html] }
+    end
   end
 
   # GET /films/1 or /films/1.json
@@ -42,10 +51,14 @@ class FilmsController < ApplicationController
 
   # PATCH/PUT /films/1 or /films/1.json
   def update
+    @film = Film.find(params[:id])
+    @film.update(film_params)
+
     respond_to do |format|
       if @film.update(film_params)
         format.html { redirect_to film_url(@film), notice: "Film was successfully updated." }
         format.json { render :show, status: :ok, location: @film }
+        format.text { render partial: "films/film_infos", locals: {film: @film}, formats: [:html] }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @film.errors, status: :unprocessable_entity }
