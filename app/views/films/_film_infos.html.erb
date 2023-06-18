@@ -1,0 +1,24 @@
+<div class="film-card" data-controller="edit-film" data-edit-film-target="card">
+
+  <div class="film-infos <%= 'd-none' if film.errors.any? %>" data-edit-film-target="infos">
+    <h2><%= film.title %></h2>
+    <button aria-label="Edit film">
+      <i class="fa-solid fa-pen fa-xs ml-2" data-action="click->edit-film#displayForm"></i>
+    </button>
+  </div>
+
+  <%= simple_form_for film,
+    html: {
+      class: film.errors.any? ? "" : "d-none",
+      data: {
+        edit_film_target: "form",
+        action: "submit->edit-film#update"
+      }
+    } do |f|
+  %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Update film", class: "btn btn-sm btn-primary btn-block mt-2" %>
+  <% end %>
+</div>
