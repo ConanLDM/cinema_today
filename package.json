@@ -11,6 +11,9 @@
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1"
   },
+  "browser": {
+    "./controllers": "./app/javascript/controllers"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
