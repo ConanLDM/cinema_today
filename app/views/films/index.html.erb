@@ -16,14 +16,14 @@
   <button class="btn btn-success" type="button">New film</button>
 <% end %>
 
-<div data-controller="search-films">
+<div data-controller="refesh-list">
   <%= form_with url: films_path, method: :get, html: {class:
-    "mb-4", data: {search_films_target: "form"}} do |f| %>
+    "mb-5", data: {refresh_list_target: "form"}} do |f| %>
     <%= f.text_field :query, class: "form-control", placeholder:
                      "Type a film title", value: params[:query],
                      data: {
-                        search_films_target: "input",
-                        action: "keyup->search-films#update"
+                        refresh_list_target: "input",
+                        action: "keyup->refresh-list#update"
                       } %>
 
 <% if @films.any? %>
@@ -46,4 +46,5 @@
 <% else %>
   <p>No results found for "<%= params[:query] %>"</p>
 <% end %>
+  <div data-refresh-list-target="list">
 <% end %>
